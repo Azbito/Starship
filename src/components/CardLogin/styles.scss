@@ -1,0 +1,45 @@
+@use '../../styles/cardColors.scss';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+
+  width: 15rem;
+  height: auto;
+  padding: 1.5rem;
+  gap: 1rem;
+  border-radius: 0.2rem;
+
+  background-color: cardColors.$backgroundColor;
+
+  backdrop-filter: blur(1rem);
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.329);
+
+  h1 {
+    color: cardColors.$titleColor;
+    font-size: 1.5rem;
+  }
+
+  p {
+    color: cardColors.$pColor;
+    font-size: 0.8rem;
+  }
+
+  strong {
+    color: cardColors.$strongColor;
+    font-size: 0.8rem;
+    transition: 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      color: cardColors.$strongColorHover;
+    }
+
+    &:active {
+      color: cardColors.$strongColorActive;
+    }
+  }
+}

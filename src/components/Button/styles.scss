@@ -1,0 +1,21 @@
+@use '../../styles/cardColors.scss';
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  padding: 0.4rem;
+
+  background-color: cardColors.$buttonColor;
+  border-radius: 0.5rem;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: cardColors.$buttonColorHover;
+  }
+
+  &:active {
+    background-color: cardColors.$buttonColorActive;
+  }
+}
