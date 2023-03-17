@@ -7,12 +7,14 @@
   width: 100vw;
 
   position: fixed;
+
   strong {
     font-size: 2rem;
     margin-left: 2rem;
     transition: 0.2s;
     cursor: pointer;
     color: white;
+
     &:hover {
       color: rgb(189, 189, 189);
     }

@@ -1,6 +1,6 @@
 @use '../../styles/cardColors.scss';
 
-.containerCard {
+.contentCardRegister {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +15,6 @@
 
   background-color: cardColors.$backgroundColor;
 
-  backdrop-filter: blur(1rem);
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.329);
 
   h1 {
@@ -23,7 +22,26 @@
     font-size: 1.5rem;
   }
 
-  input {
+  .input {
+    background-color: cardColors.$inputColor;
+    color: cardColors.$inputFontColor;
+    border: none;
+    outline: none;
+    padding: 0.3rem;
+    text-align: center;
+    border-radius: 0.2rem;
+  }
+
+  .usedemailinput {
+    background-color: rgb(194, 74, 74);
+    color: white;
+    border: none;
+    outline: none;
+    padding: 0.3rem;
+    text-align: center;
+    border-radius: 0.2rem;
+  }
+  .emailinput {
     background-color: cardColors.$inputColor;
     color: cardColors.$inputFontColor;
     border: none;

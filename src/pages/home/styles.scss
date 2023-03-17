@@ -1,0 +1,54 @@
+@use '../../styles/cardColors.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-image: url('../../../public/images/background.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.homeContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.521);
+  width: 30rem;
+  height: 20rem;
+  backdrop-filter: blur(1rem);
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.507);
+  .text {
+    margin-bottom: 1.5rem;
+    font-weight: 200;
+    font-size: 2rem;
+    color: #ffffff;
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 2rem;
+}
+
+.homeButton {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: cardColors.$buttonTextColor;
+  padding: 1.2rem;
+
+  background-color: cardColors.$buttonColor;
+  border-radius: 0.5rem;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: cardColors.$buttonColorHover;
+  }
+
+  &:active {
+    background-color: cardColors.$buttonColorActive;
+  }
+}
