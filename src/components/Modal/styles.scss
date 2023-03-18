@@ -1,0 +1,28 @@
+.warning {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  background-color: rgba(236, 55, 55, 0.562);
+  padding: 2rem;
+  border-radius: 1rem;
+
+  button {
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    background-color: rgb(131, 13, 13);
+    border-radius: 0.2rem;
+    color: rgb(255, 255, 255);
+    transition: 0.2s;
+
+    &:hover {
+      background-color: rgb(94, 12, 12);
+    }
+
+    &:active {
+      background-color: rgb(129, 28, 28);
+    }
+  }
+}

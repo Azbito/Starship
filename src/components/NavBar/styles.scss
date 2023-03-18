@@ -8,29 +8,25 @@
 
   position: fixed;
 
+  .logo {
+    margin-left: 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: white;
+    margin-right: 2rem;
+  }
+
   strong {
     font-size: 2rem;
     margin-left: 2rem;
     transition: 0.2s;
-    cursor: pointer;
-    color: white;
+
+    color: rgb(211, 119, 57);
 
     &:hover {
-      color: rgb(189, 189, 189);
-    }
-  }
-}
-
-.paths {
-  display: flex;
-  margin-right: 6rem;
-  gap: 2rem;
-  cursor: pointer;
-  color: white;
-  p {
-    transition: 0.2s;
-    &:hover {
-      color: rgb(189, 189, 189);
+      color: rgb(248, 174, 114);
     }
   }
 }
