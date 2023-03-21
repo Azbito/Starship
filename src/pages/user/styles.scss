@@ -4,7 +4,7 @@
   justify-content: center;
   background-image: linear-gradient(
     20deg,
-    rgb(153, 24, 24),
+    rgb(153, 24, 121),
     rgb(201, 110, 49),
     rgb(194, 183, 83)
   );
@@ -34,10 +34,15 @@
   }
 
   .delete {
-    width: 30rem;
-    background-color: rgb(207, 53, 53);
+    width: 30rem; 
+    height: 10rem;
+    background-image: linear-gradient(360deg, rgb(172, 43, 43), rgb(255, 0, 0));
     padding: 1rem;
     border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
     button {
       border: none;
@@ -46,7 +51,8 @@
       background-color: rgb(255, 0, 0);
       border-radius: 0.2rem;
       color: rgb(255, 255, 255);
-
+      cursor: pointer;
+      transition: .2s;
       &:hover {
         background-color: rgb(172, 6, 6);
       }
@@ -55,5 +61,42 @@
         background-color: rgb(207, 40, 40);
       }
     }
+  }
+
+  .edit {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 30rem; 
+    padding: 1rem;
+    border-radius: 1rem;
+    background-image: linear-gradient(360deg, rgb(21, 105, 42), rgb(78, 214, 96));
+   
+    button {
+      border: none;
+      outline: none;
+      padding: 0.5rem;
+      background-color: rgb(65, 173, 38);
+      border-radius: 0.2rem;
+      color: rgb(255, 255, 255);
+      cursor: pointer;
+      transition: .2s;
+      margin-top: 1rem;
+      
+      &:hover {
+        background-color: rgb(44, 158, 63);
+      }
+
+      &:active {
+        background-color: rgb(94, 235, 106);
+      }
+    }
+  }
+
+  .warnings {
+    display: flex;
+    gap: 2rem;
   }
 }

@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import api from '../../api'
 import Modal from '../../components/Modal'
 import './styles.scss'
 
 export default function User() {
-  // const [first_name, setFirstName] = useState();
-  // const [last_name, setLastName] = useState();
-  // const [email, setEmail] = useState();
-  // const [password, setPassword] = useState();
-  // const [isUsed, setIsUsed] = useState(false);
+
   const [userData, setUserData] = useState<any>({})
   const [showModal, setShowModal] = useState(false)
+  const navigate = useNavigate()
 
   async function getInfo() {
     const { data } = await api.get('user/get-me')
     setUserData(data)
   }
 
+  function goEdit() {
+    navigate('edit')
+  }
 
 
   useEffect(() => { getInfo() }, [])
@@ -31,10 +32,17 @@ export default function User() {
           <h1>{userData.last_name}</h1>
           <p>Email</p>
           <h1>{userData.email}</h1>
-          <div className="delete">
-            <strong>Delete account</strong>
-            <p>After deleting your account, you are aware you will never access you account until you create a new one.</p>
-            <button onClick={() => setShowModal(true)}>Delete</button>
+          <div className="warnings">
+            <div className="delete">
+              <strong>Delete account</strong>
+              <p>After deleting your account, you are aware you will never access you account until you create a new one.</p>
+              <button onClick={() => setShowModal(true)}>Delete</button>
+            </div>
+            <div className="edit">
+              <strong>Edit</strong>
+              <p>You think your account is outdated? Do not worry! There is time enough to update it yet.</p>
+              <button onClick={goEdit}>Edit</button>
+            </div>
           </div>
         </div>
       </div>

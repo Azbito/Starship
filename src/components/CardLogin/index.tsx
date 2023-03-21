@@ -21,7 +21,7 @@ export default function CardLogin() {
         password
       })
       Cookies.set("token", data.access_token)
-      navigate("/user")
+      window.location.reload()
     } catch (error) {
       alert("Not found")
     }

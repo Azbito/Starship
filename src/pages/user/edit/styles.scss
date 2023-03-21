@@ -1,0 +1,72 @@
+.containerEdit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+    200deg,
+    rgb(151, 18, 18),
+    rgb(233, 105, 20),
+    rgb(192, 34, 158)
+  );
+  width: 100vw;
+  height: 100vh;
+  color: white;
+}
+
+.contentBox { 
+  word-break: break-all;
+  max-width: 20rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 30rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 1rem;
+  border-radius: 1rem;
+
+  strong {
+    margin-bottom: 1rem;
+    font-size: 1.3rem
+  }
+
+  p {
+    display: flex;
+  }
+  input {
+    border: none;
+    outline: none;
+    border-radius: .5rem;
+    padding: .2rem;
+  }
+
+  button {
+    border: none;
+    outline: none;
+    background-color: rgb(32, 184, 108);
+    color: white;
+    padding: .5rem;
+    border-radius: 1rem;
+    transition: .2s;
+    
+    &:hover {
+      background-color: rgb(23, 146, 85);
+    }
+  
+    &:active {
+      background-color: rgb(75, 209, 142);
+    }
+  }
+
+
+  .buttonDisabled {
+    background-color: red;
+
+    &:hover {
+      background-color: rgb(175, 32, 32);
+    }
+  
+    
+  }
+
+}
