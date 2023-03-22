@@ -2,18 +2,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   background-image: linear-gradient(
     20deg,
     rgb(153, 24, 121),
     rgb(201, 110, 49),
     rgb(194, 183, 83)
   );
-  width: 100vw;
-  height: 100vh;
+
   color: white;
 }
 
 .infobox {
+  margin-top: 5rem;
   background-color: rgba(40, 58, 58, 0.897);
   width: 40rem;
   height: 30rem;

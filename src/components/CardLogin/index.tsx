@@ -20,7 +20,7 @@ export default function CardLogin() {
         email,
         password
       })
-      Cookies.set("token", data.access_token)
+      Cookies.set("token", data.access_token, { expires: 7 })
       window.location.reload()
     } catch (error) {
       alert("Not found")
@@ -30,9 +30,9 @@ export default function CardLogin() {
   return (
     <div className="containerCard">
       <h1>Login</h1>
-      <input placeholder='Type your email' onChange={(e: any) => setEmail(e.target.value)} type="email" />
+      <input placeholder='Type your email' onChange={(e: any) => setEmail(e.target.value)} type="email" maxLength={240} />
       <h1>Password</h1>
-      <input placeholder="Type your password" type="password" onChange={(e: any) => setPassword(e.target.value)} />
+      <input placeholder="Type your password" type="password" onChange={(e: any) => setPassword(e.target.value)} maxLength={240} />
       <button className="button" onClick={Login}>Login</button>
       <p>Do you not have an account yet? <strong onClick={goSignUp}>Sign up</strong></p>
     </div>

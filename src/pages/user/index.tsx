@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import api from '../../api'
 import Modal from '../../components/Modal'
+import PostBox from '../../components/PostBox'
 import './styles.scss'
 
 export default function User() {
@@ -45,8 +46,10 @@ export default function User() {
             </div>
           </div>
         </div>
+        <PostBox />
       </div>
       <Modal isOpen={showModal} setIsOpen={setShowModal} />
+
     </>
 
   )
