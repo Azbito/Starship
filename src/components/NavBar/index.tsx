@@ -21,7 +21,10 @@ export default function NavBar() {
 
   return (
     <div className="content">
-      <h1 className="logo">Snowly</h1>
+      <div className="logo">
+        <img className="logoImg" src="images/icon.png" alt="logo" />
+        <h1>Starship</h1>
+      </div>
       <div className="paths">
         <h1>Welcome,<strong>{userData.first_name}!</strong></h1>
       </div>

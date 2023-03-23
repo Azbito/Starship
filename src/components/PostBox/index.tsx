@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import api from '../../api'
 import Loader from '../Loader'
 import './styles.scss'
@@ -6,19 +6,22 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ModalDeletePost from '../ModalDeletePost';
 import EditIcon from '@mui/icons-material/Edit';
 import ModalEditPost from '../ModalEditPost';
+import { PostsContext } from '../../context/postsContext';
+import useLoader from '../../hooks/useLoader';
 
 export default function PostBox() {
-
+  const { posts, setPosts } = useContext(PostsContext);
   const [title, setTitle] = useState<string>('')
   const [description, setDescription] = useState<string>('')
-  const [isLoading, setIsLoading] = useState(false)
-  const [posts, setPosts] = useState<any>([])
+  const [titleEdit, setTitleEdit] = useState<string>('')
+  const [descriptionEdit, setDescriptionEdit] = useState<string>('')
   const [isOpenDelete, setIsOpenDelete] = useState(false)
   const [isOpenEdit, setIsOpenEdit] = useState(false)
   const [postID, setPostID] = useState<string>('')
+  const { closeLoader, openLoader } = useLoader()
 
   async function post() {
-    setIsLoading(true)
+    openLoader()
     try {
       await api.post('post/create', {
         title,
@@ -30,7 +33,7 @@ export default function PostBox() {
     } catch (error) {
       alert("Please, try it again")
     } finally {
-      setIsLoading(false)
+      closeLoader()
     }
   }
 
@@ -47,24 +50,24 @@ export default function PostBox() {
   }
 
   async function handleEdit() {
-    setIsLoading(true)
+    openLoader()
     try {
       await api.patch(`post/update/${postID}`, {
-        title,
-        description
+        title: titleEdit,
+        description: descriptionEdit
       })
       getPosts()
 
     } catch (error) {
       alert("Please, try it again")
     } finally {
-      setIsLoading(false)
+      closeLoader()
       setIsOpenEdit(false)
     }
   }
 
   async function handleDelete() {
-    setIsLoading(true)
+    openLoader()
 
     try {
       await api.delete(`post/delete/${postID}`)
@@ -72,7 +75,7 @@ export default function PostBox() {
     } catch (error) {
       alert("Please, try it again")
     } finally {
-      setIsLoading(false)
+      closeLoader()
       setIsOpenDelete(false)
     }
   }
@@ -94,7 +97,6 @@ export default function PostBox() {
         <textarea placeholder="Tell us what is happening today!" value={description} onChange={(e: any) => setDescription(e.target.value)} maxLength={240} />
         <span style={{ color: description.length == 240 ? "red" : "white" }}>{`${(240 - description?.length)} characters left`}</span>
         <button onClick={post}>Post</button>
-        {isLoading && <Loader />}
       </div>
       <div className="allPostsContainer">
         <p className="postsTitle">Posts</p>
@@ -120,10 +122,11 @@ export default function PostBox() {
           setIsOpenDelete(false)
         }} isOpen={isOpenDelete} onClick={handleDelete} />
 
-        <ModalEditPost titleValue={title} onChangeTitle={(e: any) => setTitle(e.target.value)} descriptionValue={description} onChangeDescription={(e: any) => setDescription(e.target.value)} isOpen={isOpenEdit} onClick={handleEdit} onRequestClose={() => {
+        <ModalEditPost titleValue={titleEdit} onChangeTitle={(e: any) => setTitleEdit(e.target.value)} descriptionValue={descriptionEdit} onChangeDescription={(e: any) => setDescriptionEdit(e.target.value)} isOpen={isOpenEdit} onClick={handleEdit} onRequestClose={() => {
           setPostID('')
           setIsOpenEdit(false)
         }} />
+
       </div>
     </>
   )

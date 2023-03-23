@@ -13,6 +13,14 @@
   .logo {
     margin-left: 2rem;
     cursor: default;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .logoImg {
+    height: 2rem;
+    width: 2rem;
   }
 
   h1 {
@@ -26,12 +34,12 @@
     margin-left: 2rem;
     transition: 0.2s;
     cursor: pointer;
-    color: rgb(211, 119, 57);
+    color: rgb(97, 55, 252);
     margin-left: .5rem;
     cursor: default;
 
     &:hover {
-      color: rgb(248, 174, 114);
+      color: rgb(156, 129, 255);
     }
   }
 

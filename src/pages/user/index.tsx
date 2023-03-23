@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import api from '../../api'
 import Modal from '../../components/Modal'
@@ -6,9 +6,11 @@ import PostBox from '../../components/PostBox'
 import './styles.scss'
 import SettingsIcon from '@mui/icons-material/Settings';
 import { Avatar } from '@mui/material'
+import { PostsContext } from '../../context/postsContext'
+import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
 
 export default function User() {
-
+  const { posts } = useContext(PostsContext);
   const [userData, setUserData] = useState<any>({})
   const [showDeleteModal, setShowDeleteModal] = useState(false)
   const navigate = useNavigate()
@@ -31,6 +33,9 @@ export default function User() {
           <div className="picture">
             <p>Profile picture</p>
             <img className="avatar" src="images/chicken.png" alt="Chicken" />
+            <div className="quantityPosts">
+              <HistoryEduIcon className="icon" /> <h1>{posts.length}</h1>
+            </div>
           </div>
           <div className="profile">
             <div className="infobox">

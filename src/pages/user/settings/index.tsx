@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import api from '../../../api';
 import WarningDelete from '../../../components/Warning';
+import { PostsContext } from '../../../context/postsContext';
 import './styles.scss'
 export default function Settings() {
   const [first_name, setFirstName] = useState();

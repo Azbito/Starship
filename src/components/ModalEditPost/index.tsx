@@ -56,7 +56,8 @@ export default function ModalEditPost({ isOpen, onClick, onRequestClose, titleVa
           <h1>Edit your post</h1>
           <p>Got a mistake? Don't worry; I'm here.</p>
           <input placeholder="title" value={titleValue} onChange={onChangeTitle} />
-          <textarea placeholder="description" value={descriptionValue} onChange={onChangeDescription} />
+          <textarea placeholder="description" value={descriptionValue} onChange={onChangeDescription} maxLength={240} />
+          <span style={{ color: descriptionValue.length == 240 ? "red" : "white" }}>{`${(240 - descriptionValue?.length)} characters left`}</span>
           <button onClick={onClick}>Save</button>
         </div>
       </div>

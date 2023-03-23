@@ -15,13 +15,12 @@ export default function Home() {
 
   return (
     <div className="container">
-      <div className="animate__animated animate__fadeInUp">
-        <div className="homeContent">
-          <p className="text">Welcome!</p>
-          <div className="buttons">
-            <button className="homeButton" onClick={goSignIn}>Sign in</button>
-            <button className="homeButton" onClick={goSignUp}>Sign up</button>
-          </div>
+      <div className="welcomeBox">
+        <h1 className="text">This is Starship!</h1>
+        <p className="animate__animated animate__fadeInDown">See new worlds, new persons, new creatures in anywhere, anytime</p>
+        <div className="buttons">
+          <button className="homeButton" onClick={goSignIn}>Sign in</button>
+          <button className="homeButton" onClick={goSignUp}>Sign up</button>
         </div>
       </div>
     </div>

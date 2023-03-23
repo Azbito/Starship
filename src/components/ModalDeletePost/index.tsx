@@ -51,7 +51,7 @@ export default function ModalDeletePost({ isOpen, onClick, onRequestClose }: Mod
         <div className="warningPost">
           <h1>Are you sure?</h1>
           <p>Remember it will never came back once you create a new one.</p>
-          <button onClick={onClick}>I am sure!</button>
+          <button className="deleteButton" onClick={onClick}>I am sure!</button>
         </div>
       </div>
     </ModalComponent >

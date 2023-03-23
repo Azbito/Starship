@@ -1,6 +1,8 @@
 .warningPost {
   display: flex;
   gap: 1rem;
+  background-color: rgb(40, 58, 58);
+
   input {
     border: none;
     outline: none;
@@ -19,6 +21,13 @@
   }
 
   button {
+    padding: .5rem;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: .2s;
     background-color: rgb(30, 184, 30);
 
     &:hover {

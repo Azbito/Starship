@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Cookies from 'js-cookie'
 import CardLogin from './components/CardLogin';
 import api from './api';
 import Pages from './routes';
 import NavBar from './components/NavBar';
 import './styles/global.scss'
+import { PostsContextProvider } from './context/postsContext';
+import { LoaderContext, LoaderContextProvider } from './context/loaderContext';
+import Loader from './components/Loader';
+
 function App() {
+
   return (
-    <>
-      <Pages />
-    </>
+    <LoaderContextProvider>
+      <PostsContextProvider>
+        <Pages />
+      </PostsContextProvider>
+    </LoaderContextProvider>
   )
 }
 
