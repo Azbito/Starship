@@ -1,5 +1,5 @@
 import ModalComponent from 'react-modal';
-import { ButtonHTMLAttributes, Dispatch, SetStateAction, useState } from 'react';
+import { ButtonHTMLAttributes, ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
 import api from '../../api';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
@@ -8,10 +8,14 @@ import './styles.scss';
 type ModalProps = {
   isOpen: boolean,
   onClick: () => void,
-  onRequestClose: () => void
+  onRequestClose: () => void,
+  titleValue: string,
+  onChangeTitle: (e: ChangeEvent<HTMLInputElement>) => void
+  descriptionValue: string,
+  onChangeDescription: (e: ChangeEvent<HTMLTextAreaElement>) => void
 }
 
-export default function ModalDeletePost({ isOpen, onClick, onRequestClose }: ModalProps) {
+export default function ModalEditPost({ isOpen, onClick, onRequestClose, titleValue, onChangeTitle, descriptionValue, onChangeDescription }: ModalProps) {
 
   return (
     <ModalComponent
@@ -49,9 +53,11 @@ export default function ModalDeletePost({ isOpen, onClick, onRequestClose }: Mod
     >
       <div>
         <div className="warningPost">
-          <h1>Are you sure?</h1>
-          <p>Remember it will never came back once you create a new one.</p>
-          <button onClick={onClick}>I am sure!</button>
+          <h1>Edit your post</h1>
+          <p>Got a mistake? Don't worry; I'm here.</p>
+          <input placeholder="title" value={titleValue} onChange={onChangeTitle} />
+          <textarea placeholder="description" value={descriptionValue} onChange={onChangeDescription} />
+          <button onClick={onClick}>Save</button>
         </div>
       </div>
     </ModalComponent >

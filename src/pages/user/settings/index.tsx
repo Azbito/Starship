@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import api from '../../../api';
+import WarningDelete from '../../../components/Warning';
 import './styles.scss'
-export default function Edit() {
+export default function Settings() {
   const [first_name, setFirstName] = useState();
   const [last_name, setLastName] = useState();
   const [email, setEmail] = useState();
@@ -55,6 +56,7 @@ export default function Edit() {
         <input placeholder='Password' type="password" value={password} onChange={(e: any) => setPassword(e.target.value)} />
         <button onClick={updateInfo} disabled={isDisabled} className={isDisabled ? "buttonDisabled" : "button"}>Update</button>
       </div>
+      <WarningDelete />
     </div>
   )
 }

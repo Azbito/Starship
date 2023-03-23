@@ -62,6 +62,6 @@ export default function Modal({ isOpen, setIsOpen }: ModalProps) {
           <button onClick={deleteAccount}>I am sure!</button>
         </div>
       </div>
-    </ModalComponent >
+    </ModalComponent>
   )
 }

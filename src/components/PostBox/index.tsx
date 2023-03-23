@@ -4,6 +4,8 @@ import Loader from '../Loader'
 import './styles.scss'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ModalDeletePost from '../ModalDeletePost';
+import EditIcon from '@mui/icons-material/Edit';
+import ModalEditPost from '../ModalEditPost';
 
 export default function PostBox() {
 
@@ -11,12 +13,12 @@ export default function PostBox() {
   const [description, setDescription] = useState<string>('')
   const [isLoading, setIsLoading] = useState(false)
   const [posts, setPosts] = useState<any>([])
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpenDelete, setIsOpenDelete] = useState(false)
+  const [isOpenEdit, setIsOpenEdit] = useState(false)
   const [postID, setPostID] = useState<string>('')
 
   async function post() {
     setIsLoading(true)
-
     try {
       await api.post('post/create', {
         title,
@@ -34,8 +36,31 @@ export default function PostBox() {
 
   async function openDeletePostModal(id: string) {
     setPostID(id)
-    setIsOpen(true)
+    setIsOpenDelete(true)
+  }
 
+  async function openEditPostModal(post: any) {
+    setPostID(post?.id)
+    setTitle(post.title)
+    setDescription(post.description)
+    setIsOpenEdit(true)
+  }
+
+  async function handleEdit() {
+    setIsLoading(true)
+    try {
+      await api.patch(`post/update/${postID}`, {
+        title,
+        description
+      })
+      getPosts()
+
+    } catch (error) {
+      alert("Please, try it again")
+    } finally {
+      setIsLoading(false)
+      setIsOpenEdit(false)
+    }
   }
 
   async function handleDelete() {
@@ -48,7 +73,7 @@ export default function PostBox() {
       alert("Please, try it again")
     } finally {
       setIsLoading(false)
-      setIsOpen(false)
+      setIsOpenDelete(false)
     }
   }
 
@@ -75,7 +100,10 @@ export default function PostBox() {
         <p className="postsTitle">Posts</p>
         {posts.length > 0 ? posts.map((item: any) => (
           <div key={item?.id} className="box">
-            <DeleteOutlineIcon className="iconDelete" onClick={() => openDeletePostModal(item.id)} />
+            <div className="tools">
+              <EditIcon className="iconEdit" onClick={() => openEditPostModal(item)} />
+              <DeleteOutlineIcon className="iconDelete" onClick={() => openDeletePostModal(item.id)} />
+            </div>
             <div className="header">
               <div className="title">
                 <h1>
@@ -89,8 +117,13 @@ export default function PostBox() {
         }
         <ModalDeletePost onRequestClose={() => {
           setPostID('')
-          setIsOpen(false)
-        }} isOpen={isOpen} onClick={handleDelete} />
+          setIsOpenDelete(false)
+        }} isOpen={isOpenDelete} onClick={handleDelete} />
+
+        <ModalEditPost titleValue={title} onChangeTitle={(e: any) => setTitle(e.target.value)} descriptionValue={description} onChangeDescription={(e: any) => setDescription(e.target.value)} isOpen={isOpenEdit} onClick={handleEdit} onRequestClose={() => {
+          setPostID('')
+          setIsOpenEdit(false)
+        }} />
       </div>
     </>
   )

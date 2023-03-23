@@ -4,13 +4,15 @@
   justify-content: space-between;
   background-color: rgba(43, 39, 36, 0.733);
   height: 3rem;
-  width: 100vw;
+  width: 100%;
   box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.315);
   backdrop-filter: blur(.2rem);
   position: fixed;
+  z-index: 2;
 
   .logo {
     margin-left: 2rem;
+    cursor: default;
   }
 
   h1 {
@@ -26,6 +28,8 @@
     cursor: pointer;
     color: rgb(211, 119, 57);
     margin-left: .5rem;
+    cursor: default;
+
     &:hover {
       color: rgb(248, 174, 114);
     }

@@ -1,0 +1,36 @@
+.warningBox{
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete {
+  width: 50%; 
+  height: auto;
+  background-image: linear-gradient(360deg, rgb(172, 43, 43), rgb(255, 0, 0));
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.479);
+  button {
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    background-color: rgb(255, 0, 0);
+    border-radius: 0.2rem;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: .2s;
+    &:hover {
+      background-color: rgb(172, 6, 6);
+    }
+
+    &:active {
+      background-color: rgb(207, 40, 40);
+    }
+  }
+}

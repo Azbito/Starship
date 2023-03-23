@@ -2,6 +2,7 @@ import Cookies from 'js-cookie'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import api from '../../api'
+import Loader from '../Loader'
 import './styles.scss'
 
 export default function CardRegister() {
@@ -10,6 +11,7 @@ export default function CardRegister() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [isUsed, setIsUsed] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate()
 
@@ -18,6 +20,7 @@ export default function CardRegister() {
   }
 
   async function register() {
+    setIsLoading(true)
     try {
       await api.post('user/create', {
         first_name,
@@ -29,6 +32,7 @@ export default function CardRegister() {
     } catch (error: any) {
       alert(error.response.data.message)
       setIsUsed(true)
+      setIsLoading(false)
     }
   }
 
@@ -43,8 +47,10 @@ export default function CardRegister() {
       <h1>Password</h1>
       <input className="input" placeholder="Type your password" type="password" onChange={(e: any) => setPassword(e.target.value)} maxLength={240} />
       <button className="button" onClick={register}>Register</button>
+      {isLoading && <Loader />}
 
-      <p>Do you have an account? <strong onClick={goSignIn}>Sign in</strong></p>
+      <p>Do you have an account?</p>
+      <strong onClick={goSignIn}>Sign in</strong>
     </div>
   )
 }

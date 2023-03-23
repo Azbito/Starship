@@ -6,7 +6,7 @@ import Home from "./pages/home";
 import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
 import User from "./pages/user";
-import Edit from "./pages/user/edit";
+import Settings from "./pages/user/settings";
 
 function Pages() {
   const token = Cookies.get("token")
@@ -36,7 +36,7 @@ function Pages() {
         <Route element={<PublicRoutes><SignIn /></PublicRoutes>} path="/sign-in" />
         <Route element={<PublicRoutes><SignUp /></PublicRoutes>} path="/sign-up" />
         <Route element={<ProtectRoutes><User /></ProtectRoutes>} path="/user" />
-        <Route element={<ProtectRoutes><Edit /></ProtectRoutes>} path="/user/edit" />
+        <Route element={<ProtectRoutes><Settings /></ProtectRoutes>} path="/user/settings" />
       </Routes>
     </BrowserRouter>
   )

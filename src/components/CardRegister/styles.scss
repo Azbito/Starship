@@ -9,11 +9,12 @@
 
   width: 15rem;
   height: auto;
-  padding: 1.5rem;
+  padding: 4rem;
   gap: 1rem;
-  border-radius: 0.2rem;
+  border-radius: 1rem;
 
   background-color: cardColors.$backgroundColor;
+  backdrop-filter: blur(.2rem);
 
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.329);
 
@@ -56,7 +57,7 @@
     outline: none;
     cursor: pointer;
     color: cardColors.$buttonTextColor;
-    padding: 0.4rem;
+    padding: .8rem;
 
     background-color: cardColors.$buttonColor;
     border-radius: 0.5rem;
@@ -73,12 +74,12 @@
 
   p {
     color: cardColors.$pColor;
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   strong {
     color: cardColors.$strongColor;
-    font-size: 0.8rem;
+    font-size: 1rem;
     transition: 0.2s;
     cursor: pointer;
 
