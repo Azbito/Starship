@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { LoaderContext } from '../context/loaderContext'
+import { LoaderContext } from '../contexts/loaderContext'
 
 export default function useLoader() {
   const { setIsLoading } = useContext(LoaderContext)

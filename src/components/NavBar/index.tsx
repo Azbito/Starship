@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import api from '../../api'
 import './styles.scss'
+import LogoutIcon from '@mui/icons-material/Logout';
 
 export default function NavBar() {
   const [userData, setUserData] = useState<any>({})
@@ -22,13 +23,13 @@ export default function NavBar() {
   return (
     <div className="content">
       <div className="logo">
-        <img className="logoImg" src="images/icon.png" alt="logo" />
+        <img className="logoImg" src="../../../images/icon.png" alt="logo" />
         <h1>Starship</h1>
       </div>
-      <div className="paths">
+      <div className="welcomeQuote">
         <h1>Welcome,<strong>{userData.first_name}!</strong></h1>
       </div>
-      <h1 className="logout" onClick={logout}>Logout</h1>
+      <LogoutIcon className="logout" onClick={logout} />
     </div>
   )
 }

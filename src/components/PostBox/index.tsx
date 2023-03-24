@@ -6,7 +6,7 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ModalDeletePost from '../ModalDeletePost';
 import EditIcon from '@mui/icons-material/Edit';
 import ModalEditPost from '../ModalEditPost';
-import { PostsContext } from '../../context/postsContext';
+import { PostsContext } from '../../contexts/postsContext';
 import useLoader from '../../hooks/useLoader';
 
 export default function PostBox() {
@@ -44,8 +44,8 @@ export default function PostBox() {
 
   async function openEditPostModal(post: any) {
     setPostID(post?.id)
-    setTitle(post.title)
-    setDescription(post.description)
+    setTitleEdit(post.title)
+    setDescriptionEdit(post.description)
     setIsOpenEdit(true)
   }
 
@@ -124,6 +124,9 @@ export default function PostBox() {
 
         <ModalEditPost titleValue={titleEdit} onChangeTitle={(e: any) => setTitleEdit(e.target.value)} descriptionValue={descriptionEdit} onChangeDescription={(e: any) => setDescriptionEdit(e.target.value)} isOpen={isOpenEdit} onClick={handleEdit} onRequestClose={() => {
           setPostID('')
+
+          setTitleEdit('')
+          setDescriptionEdit('')
           setIsOpenEdit(false)
         }} />
 

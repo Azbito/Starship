@@ -6,8 +6,9 @@ import PostBox from '../../components/PostBox'
 import './styles.scss'
 import SettingsIcon from '@mui/icons-material/Settings';
 import { Avatar } from '@mui/material'
-import { PostsContext } from '../../context/postsContext'
+import { PostsContext } from '../../contexts/postsContext'
 import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
+import numberConvert from '../../utils/numberConverter'
 
 export default function User() {
   const { posts } = useContext(PostsContext);
@@ -26,6 +27,8 @@ export default function User() {
 
   useEffect(() => { getInfo() }, [])
 
+
+
   return (
     <>
       <div className="containerUser">
@@ -34,7 +37,8 @@ export default function User() {
             <p>Profile picture</p>
             <img className="avatar" src="images/chicken.png" alt="Chicken" />
             <div className="quantityPosts">
-              <HistoryEduIcon className="icon" /> <h1>{posts.length}</h1>
+              <HistoryEduIcon className="icon" />
+              {posts.length >= 1000 ? <h1>{numberConvert(posts.length)}</h1> : <h1>{posts.length}</h1>}
             </div>
           </div>
           <div className="profile">

@@ -23,10 +23,16 @@
     width: 2rem;
   }
 
+  .welcomeQuote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-right: 6rem;
+  }
   h1 {
     font-size: 2rem;
     color: white;
-    margin-right: 2rem;
   }
 
   strong {
@@ -45,7 +51,8 @@
 
   .logout {
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    margin-right: 1rem;
     color: rgb(197, 57, 57);
     transition: .2s;
     

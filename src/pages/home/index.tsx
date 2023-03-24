@@ -17,7 +17,9 @@ export default function Home() {
     <div className="container">
       <div className="welcomeBox">
         <h1 className="text">This is Starship!</h1>
-        <p className="animate__animated animate__fadeInDown">See new worlds, new persons, new creatures in anywhere, anytime</p>
+        <div className="subtitle animate__animated animate__fadeInDown" >
+          <p>See new worlds, new persons, new creatures in anywhere, anytime</p>
+        </div>
         <div className="buttons">
           <button className="homeButton" onClick={goSignIn}>Sign in</button>
           <button className="homeButton" onClick={goSignUp}>Sign up</button>

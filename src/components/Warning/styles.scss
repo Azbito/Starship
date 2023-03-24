@@ -1,5 +1,5 @@
 .warningBox{
-  width: 40%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,6 +7,7 @@
 
 .delete {
   width: 50%; 
+  gap: 1rem;
   height: auto;
   background-image: linear-gradient(360deg, rgb(172, 43, 43), rgb(255, 0, 0));
   padding: 1rem;

@@ -16,7 +16,19 @@
   margin-top: 1rem;
   --animate-duration: 2s;
   color: white;
-  width: 80%;
+ 
+ 
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  --animate-duration: 2s;
+  color: white;
+  width: 50%;
+  font-size: 1rem;
   background-color: rgb(123, 59, 206);
   padding: 1rem 0 1rem 1rem;
   border-radius: 1rem;

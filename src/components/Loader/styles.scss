@@ -1,12 +1,12 @@
 .containerLoading {
   background-color: rgb(0, 0, 0, 0.5);
   width: 100vw;
-  height: 100vh;
+  height: 110vh;
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2;
+  z-index: 999;
 }
 
 .lds-dual-ring {

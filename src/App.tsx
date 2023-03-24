@@ -5,8 +5,8 @@ import api from './api';
 import Pages from './routes';
 import NavBar from './components/NavBar';
 import './styles/global.scss'
-import { PostsContextProvider } from './context/postsContext';
-import { LoaderContext, LoaderContextProvider } from './context/loaderContext';
+import { PostsContextProvider } from './contexts/postsContext';
+import { LoaderContext, LoaderContextProvider } from './contexts/loaderContext';
 import Loader from './components/Loader';
 
 function App() {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import api from '../../../api';
 import WarningDelete from '../../../components/Warning';
-import { PostsContext } from '../../../context/postsContext';
+import { PostsContext } from '../../../contexts/postsContext';
 import './styles.scss'
 export default function Settings() {
   const [first_name, setFirstName] = useState();
@@ -41,23 +41,25 @@ export default function Settings() {
     getInfo()
   }, [])
 
-
-
   return (
     <div className="containerEdit">
-      <div className="contentBox">
-        <strong>Update your data</strong>
-        <p>First Name</p>
-        <input placeholder='First name' value={first_name} onChange={(e: any) => setFirstName(e.target.value)} />
-        <p>Last Name</p>
-        <input placeholder='Last name' value={last_name} onChange={(e: any) => setLastName(e.target.value)} />
-        <p>Email</p>
-        <input placeholder='Email' type="email" value={email} onChange={(e: any) => setEmail(e.target.value)} />
-        <p>Password</p>
-        <input placeholder='Password' type="password" value={password} onChange={(e: any) => setPassword(e.target.value)} />
-        <button onClick={updateInfo} disabled={isDisabled} className={isDisabled ? "buttonDisabled" : "button"}>Update</button>
+      <div className="animate__animated animate__fadeInUp">
+        <div className="contentBox">
+          <strong>Update your data</strong>
+          <p>First Name</p>
+          <input placeholder='First name' value={first_name} onChange={(e: any) => setFirstName(e.target.value)} />
+          <p>Last Name</p>
+          <input placeholder='Last name' value={last_name} onChange={(e: any) => setLastName(e.target.value)} />
+          <p>Email</p>
+          <input placeholder='Email' type="email" value={email} onChange={(e: any) => setEmail(e.target.value)} />
+          <p>Password</p>
+          <input placeholder='Password' type="password" value={password} onChange={(e: any) => setPassword(e.target.value)} />
+          <button onClick={updateInfo} disabled={isDisabled} className={isDisabled ? "buttonDisabled" : "button"}>Update</button>
+        </div>
       </div>
-      <WarningDelete />
+      <div className="animate__animated animate__fadeInRight">
+        <WarningDelete />
+      </div>
     </div>
   )
 }
