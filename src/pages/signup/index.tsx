@@ -1,6 +1,6 @@
 import React from 'react'
-import CardRegister from '../../components/CardRegister'
 import 'animate.css';
+import CardRegister from '../../components/CardRegister';
 export default function SignUp() {
   return (
     <div className="container">

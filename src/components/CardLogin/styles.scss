@@ -61,17 +61,18 @@
   }
 
   strong {
-    color: cardColors.$strongColor;
+    color: rgb(120, 223, 120);
     font-size: 1rem;
     transition: 0.2s;
     cursor: pointer;
-
+  
     &:hover {
-      color: cardColors.$strongColorHover;
+      color: rgb(191, 253, 191);
     }
-
+  
     &:active {
-      color: cardColors.$strongColorActive;
+      color: rgb(80, 177, 80);
     }
   }
+  
 }

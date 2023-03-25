@@ -30,6 +30,7 @@
     width: 100%;
     margin-right: 6rem;
   }
+
   h1 {
     font-size: 2rem;
     color: white;
@@ -62,6 +63,28 @@
 
     &:active {
       color: rgb(192, 53, 53);
+    }
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    .forum {
+      font-size: 2rem;
+      margin-top: .2rem;
+      color: rgb(216, 216, 216);
+      transition: .2s;
+      
+      &:hover {
+        color: white;
+      }
+
+      &:active {
+        color: rgb(161, 161, 161);
+      }
     }
   }
 }

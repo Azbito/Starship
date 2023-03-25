@@ -1,12 +1,14 @@
 import Cookies from 'js-cookie'
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import api from '../../api'
 import './styles.scss'
 import LogoutIcon from '@mui/icons-material/Logout';
+import ForumIcon from '@mui/icons-material/Forum';
+import { useNavigate } from 'react-router-dom';
 
 export default function NavBar() {
   const [userData, setUserData] = useState<any>({})
+  const navigate = useNavigate()
 
   async function getInfo() {
     const { data } = await api.get('user/get-me')
@@ -16,6 +18,10 @@ export default function NavBar() {
   function logout() {
     Cookies.remove('token')
     window.location.reload()
+  }
+
+  function goToPosts() {
+    navigate('/posts')
   }
 
   useEffect(() => { getInfo() }, [])
@@ -29,7 +35,10 @@ export default function NavBar() {
       <div className="welcomeQuote">
         <h1>Welcome,<strong>{userData.first_name}!</strong></h1>
       </div>
-      <LogoutIcon className="logout" onClick={logout} />
+      <div className="icons">
+        <ForumIcon className="forum" onClick={goToPosts} />
+        <LogoutIcon className="logout" onClick={logout} />
+      </div>
     </div>
   )
 }
