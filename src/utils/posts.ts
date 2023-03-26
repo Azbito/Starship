@@ -58,7 +58,7 @@ export const communityPosts = [
     id: 8,
     avatar: 'rubber_duck',
     name: 'DucklingLover',
-    title: 'Society of Lovers Duck',
+    title: 'Society of Duck Lovers',
     description:
       'I am looking for people to join to our society. We post ducklings memes, picture everyday of a duck, everything about ducks.'
   },
