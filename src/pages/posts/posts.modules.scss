@@ -1,10 +1,15 @@
-.container {
-  background-image: url('../../../public/images/backgroundPosts.jpg');
+.containerCommunity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../assets/images/backgroundPosts.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
   color: white;
   width: 100vw;
-  height: 100%
+  height: 100%;
+
 }
 
 .containerCommunityPosts {
@@ -16,6 +21,7 @@
   width: 100%;
   gap: 5rem;
   margin-bottom: 2rem;
+  
 
   .communityPostsTitle {
 

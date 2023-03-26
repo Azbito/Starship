@@ -3,9 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import api from '../../api'
 import Modal from '../../components/Modal'
 import PostBox from '../../components/PostBox'
-import './styles.scss'
+import './user.modules.scss'
 import SettingsIcon from '@mui/icons-material/Settings';
-import { Avatar } from '@mui/material'
 import { PostsContext } from '../../contexts/postsContext'
 import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
 import numberConvert from '../../utils/numberConverter'
@@ -27,15 +26,13 @@ export default function User() {
 
   useEffect(() => { getInfo() }, [])
 
-
-
   return (
     <>
       <div className="containerUser">
         <div className="userData">
           <div className="picture">
             <p>Profile picture</p>
-            <img className="avatar" src="images/chicken.png" alt="Chicken" />
+            <img className="avatar" src={require(`../../assets/images/${userData?.avatar ?? undefined}.png`)} alt={userData.avatar} />
             <div className="quantityPosts">
               <HistoryEduIcon className="icon" />
               {posts.length >= 1000 ? <h1>{numberConvert(posts.length)}</h1> : <h1>{posts.length}</h1>}

@@ -1,23 +1,15 @@
 @use '../../styles/cardColors.scss';
 
-.container {
+.containerHome {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  background-image: url('../../../public/images/banner.jpg');
-  background-size: cover;
-  background-position: center center;
-  height: 100vh;
   flex-direction: column;
-}
-
-.animate__animated.animate__fadeInDown {
-  margin-top: 1rem;
-  --animate-duration: 2s;
-  color: white;
- 
- 
+  background-size: cover;
+  background-image: url("../../assets/images/banner.jpg");
+  background-position: center center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .subtitle {
@@ -85,7 +77,7 @@
   cursor: pointer;
   color: cardColors.$buttonTextColor;
   padding: 1.2rem;
-
+  font-family: "Poppins";
   background-color: cardColors.$buttonColor;
   border-radius: 0.5rem;
   transition: 0.2s;

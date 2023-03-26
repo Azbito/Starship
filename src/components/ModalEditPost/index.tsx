@@ -3,7 +3,9 @@ import { ButtonHTMLAttributes, ChangeEvent, Dispatch, SetStateAction, useState }
 import api from '../../api';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
-import './styles.scss';
+import './modaleditpost.modules.scss';
+import Input from '../Input';
+import TextArea from '../TextArea';
 
 type ModalProps = {
   isOpen: boolean,
@@ -12,10 +14,11 @@ type ModalProps = {
   titleValue: string,
   onChangeTitle: (e: ChangeEvent<HTMLInputElement>) => void
   descriptionValue: string,
-  onChangeDescription: (e: ChangeEvent<HTMLTextAreaElement>) => void
+  onChangeDescription: (e: ChangeEvent<HTMLTextAreaElement>) => void,
+  descriptionError?: string
 }
 
-export default function ModalEditPost({ isOpen, onClick, onRequestClose, titleValue, onChangeTitle, descriptionValue, onChangeDescription }: ModalProps) {
+export default function ModalEditPost({ isOpen, onClick, onRequestClose, titleValue, onChangeTitle, descriptionValue, onChangeDescription, descriptionError }: ModalProps) {
 
   return (
     <ModalComponent
@@ -55,8 +58,9 @@ export default function ModalEditPost({ isOpen, onClick, onRequestClose, titleVa
         <div className="warningPost">
           <h1>Edit your post</h1>
           <p>Got a mistake? Don't worry; I'm here.</p>
-          <input placeholder="Title" value={titleValue} onChange={onChangeTitle} />
-          <textarea placeholder="Description" value={descriptionValue} onChange={onChangeDescription} maxLength={240} />
+          <Input placeholder="Title" value={titleValue} onChange={onChangeTitle} />
+
+          <TextArea placeholder="Description" value={descriptionValue} onChange={onChangeDescription} errorMessage={descriptionError} />
           <span style={{ color: descriptionValue.length == 240 ? "red" : "white" }}>{`${(240 - descriptionValue?.length)} characters left`}</span>
           <button onClick={onClick}>Save</button>
         </div>

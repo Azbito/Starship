@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes, Dispatch, SetStateAction, useState } from 'react'
 import api from '../../api';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
-import './styles.scss';
+import './modaldeletepost.modules.scss';
 
 type ModalProps = {
   isOpen: boolean,

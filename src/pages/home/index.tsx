@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import './styles.scss'
+import './home.modules.scss'
 
 export default function Home() {
   const navigate = useNavigate()
@@ -14,7 +14,7 @@ export default function Home() {
   }
 
   return (
-    <div className="container">
+    <div className="containerHome">
       <div className="welcomeBox">
         <h1 className="text">This is Starship!</h1>
         <div className="subtitle animate__animated animate__fadeInDown" >

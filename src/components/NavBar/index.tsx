@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie'
 import React, { useState, useEffect } from 'react'
 import api from '../../api'
-import './styles.scss'
+import './navbar.modules.scss'
 import LogoutIcon from '@mui/icons-material/Logout';
 import ForumIcon from '@mui/icons-material/Forum';
 import { useNavigate } from 'react-router-dom';
@@ -29,7 +29,7 @@ export default function NavBar() {
   return (
     <div className="content">
       <div className="logo">
-        <img className="logoImg" src="../../../images/icon.png" alt="logo" />
+        <img className="logoImg" src={require("../../assets/images/logo.png")} alt="logo" />
         <h1>Starship</h1>
       </div>
       <div className="welcomeQuote">

@@ -4,7 +4,7 @@ import api from '../../../api';
 import Input from '../../../components/Input';
 import WarningDelete from '../../../components/Warning';
 import { PostsContext } from '../../../contexts/postsContext';
-import './styles.scss'
+import './settings.modules.scss'
 export default function Settings() {
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");

@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url('../../../public/images/background.jpg');
+  background-image: url('../../assets/images/background.jpg');
   background-repeat: repeat-y;
   background-size: 100%;
   color: white;
@@ -112,16 +112,6 @@
     border: none;
     padding: .5rem;
     border-radius: 1rem;  
-  }
-
-  textarea {
-    resize: none;
-    outline: none;
-    border: none;
-    padding: 1rem;
-    width: 80%;
-    height: 5rem;
-    border-radius: 1rem;
   }
 
   button {

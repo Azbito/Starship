@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Modal from '../Modal'
-import './styles.scss'
+import './warning.modules.scss'
 
 export default function WarningDelete() {
   const navigate = useNavigate()
