@@ -1,5 +1,5 @@
 import ModalComponent from 'react-modal';
-import './modaldeletepost.modules.scss';
+import './styles.scss';
 
 type ModalProps = {
   isOpen: boolean,

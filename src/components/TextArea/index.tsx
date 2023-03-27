@@ -1,5 +1,5 @@
 import React, { TextareaHTMLAttributes } from 'react'
-import './textarea.modules.scss'
+import './styles.scss'
 
 type TextAreaProps = {
   errorMessage?: string,

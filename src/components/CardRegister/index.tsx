@@ -5,7 +5,7 @@ import useLink from '../../hooks/useLink'
 import useLoader from '../../hooks/useLoader'
 import Input from '../Input'
 import Loader from '../Loader'
-import './cardregister.modules.scss'
+import './styles.scss'
 
 export default function CardRegister() {
   const [first_name, setFirstName] = useState();

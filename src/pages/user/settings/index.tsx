@@ -5,7 +5,8 @@ import Input from '../../../components/Input';
 import WarningDelete from '../../../components/Warning';
 import { PostsContext } from '../../../contexts/postsContext';
 import useLink from '../../../hooks/useLink';
-import './settings.modules.scss'
+import './styles.scss'
+
 export default function Settings() {
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");

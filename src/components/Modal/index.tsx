@@ -1,6 +1,6 @@
 import ModalComponent from 'react-modal';
 import { Dispatch, SetStateAction, useState } from 'react';
-import './modal.modules.scss'
+import './styles.scss'
 import api from '../../api';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';

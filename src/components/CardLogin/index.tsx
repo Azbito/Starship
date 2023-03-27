@@ -4,7 +4,7 @@ import api from '../../api'
 import useLink from '../../hooks/useLink'
 import useLoader from '../../hooks/useLoader';
 import Input from '../Input'
-import './login.module.scss'
+import './styles.scss'
 
 export default function CardLogin() {
   const [email, setEmail] = useState('')

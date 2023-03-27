@@ -1,5 +1,5 @@
 import React from 'react'
-import './input.modules.scss'
+import './styles.scss'
 
 type inputProps = {
   placeholder: string,

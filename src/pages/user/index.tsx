@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import api from '../../api'
 import Modal from '../../components/Modal'
-import './user.module.scss'
+import './styles.scss'
 import SettingsIcon from '@mui/icons-material/Settings';
 import { PostsContext } from '../../contexts/postsContext'
 import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
@@ -26,8 +26,6 @@ export default function User() {
     const { data } = await api.get('user/get-me')
     setUserData(data)
   }
-
-
 
   async function getPosts() {
     const { data } = await api.get('post/all')

@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes, ChangeEvent, Dispatch, SetStateAction, useState }
 import api from '../../api';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
-import './modaleditpost.modules.scss';
+import './styles.scss';
 import Input from '../Input';
 import TextArea from '../TextArea';
 

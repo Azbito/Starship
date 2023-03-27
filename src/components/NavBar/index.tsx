@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react'
 import api from '../../api'
-import './navbar.modules.scss'
+import './styles.scss'
 import LogoutIcon from '@mui/icons-material/Logout';
 import ForumIcon from '@mui/icons-material/Forum';
 import useLink from '../../hooks/useLink';

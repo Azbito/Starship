@@ -1,6 +1,6 @@
 import React from 'react'
 import useLink from '../../hooks/useLink'
-import './home.modules.scss'
+import './styles.scss'
 
 export default function Home() {
   const { goSignIn, goSignUp } = useLink()

@@ -3,7 +3,7 @@ import api from '../../api'
 import useLoader from '../../hooks/useLoader'
 import Input from '../Input'
 import TextArea from '../TextArea'
-import './postarea.modules.scss'
+import './styles.scss'
 
 type PostAreaProps = {
   onClick: (e: any) => void,

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Modal from '../Modal'
-import './warning.modules.scss'
+import './styles.scss'
 
 export default function WarningDelete() {
   const [showModal, setShowModal] = useState(false)

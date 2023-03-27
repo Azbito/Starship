@@ -6,7 +6,7 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ModalDeletePost from '../ModalDeletePost';
 import EditIcon from '@mui/icons-material/Edit';
 import ModalEditPost from '../ModalEditPost';
-import './yourposts.modules.scss'
+import './styles.scss'
 
 export default function YourPosts() {
 
