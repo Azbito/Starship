@@ -1,8 +1,4 @@
 import ModalComponent from 'react-modal';
-import { ButtonHTMLAttributes, Dispatch, SetStateAction, useState } from 'react';
-import api from '../../api';
-import { useNavigate } from 'react-router-dom';
-import Cookies from 'js-cookie';
 import './modaldeletepost.modules.scss';
 
 type ModalProps = {

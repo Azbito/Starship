@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie'
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import api from '../../api'
+import useLink from '../../hooks/useLink'
 import Input from '../Input'
 import Loader from '../Loader'
 import './login.modules.scss'
@@ -10,17 +10,9 @@ export default function CardLogin() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-
-  const navigate = useNavigate()
-
-  const goSignUp = () => {
-    navigate("/sign-up")
-  }
-
+  const { goSignUp } = useLink()
 
   async function login(e: any) {
-    // e.prevent.default()
-
     setIsLoading(true)
     try {
       const { data } = await api.post('auth/login', {

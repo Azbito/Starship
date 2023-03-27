@@ -69,5 +69,21 @@ export const communityPosts = [
     title: "I'm looking foward for",
     description:
       'Studying cience, sign language, biology, coding, design, music, everything! Where should I start?'
+  },
+  {
+    id: 10,
+    avatar: 'chicken',
+    name: 'ChickenLittle123',
+    title: 'Biology Test',
+    description:
+      'Im feeling bad, dude. i got a F in my biology test. i passed for 5 daybreaks studying for this, then i failed. i need help :c'
+  },
+  {
+    id: 11,
+    avatar: 'unicorn',
+    name: 'Surreal',
+    title: 'I need some ideas',
+    description:
+      "I'm wondering what should I draw. I got many ideas, but they don't get me to anywhere. I need some suggestions!"
   }
 ]

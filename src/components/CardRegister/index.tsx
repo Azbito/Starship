@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie'
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import api from '../../api'
+import useLink from '../../hooks/useLink'
 import Input from '../Input'
 import Loader from '../Loader'
 import './cardregister.modules.scss'
@@ -15,11 +15,7 @@ export default function CardRegister() {
   const [areDifferents, setAreDifferents] = useState(false);
   const [isUsed, setIsUsed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate()
-
-  const goSignIn = () => {
-    navigate("/sign-in")
-  }
+  const { goSignIn } = useLink()
 
   async function register() {
 
@@ -37,7 +33,7 @@ export default function CardRegister() {
         password
       })
       setIsLoading(false)
-      navigate("/sign-in")
+      goSignIn()
     }
     catch (error: any) {
       alert(error.response.data.message)
@@ -57,10 +53,10 @@ export default function CardRegister() {
           <h1>Last name</h1>
           <Input placeholder="Type your last name" onChange={(e) => setLastName(e.target.value)} value={last_name} />
           <h1>Email</h1>
-          <Input placeholder="Type your email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <Input hasError={isUsed} placeholder="Type your email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
           <h1>Password</h1>
-          <Input placeholder="Type your password" value={password} onChange={(e: any) => setPassword(e.target.value)} />
-          <Input placeholder="Confirm your password" value={confirmPassword} onChange={(e: any) => setConfirmPassword(e.target.value)} />
+          <Input type="password" placeholder="Type your password" value={password} onChange={(e: any) => setPassword(e.target.value)} />
+          <Input type="password" placeholder="Confirm your password" value={confirmPassword} onChange={(e: any) => setConfirmPassword(e.target.value)} />
           {areDifferents ? <p className="errorPassword">Passwords must be the same</p> : <></>}
           <button className="button" onClick={register}>Register</button>
           {isLoading && <Loader />}

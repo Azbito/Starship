@@ -15,10 +15,10 @@ type ModalProps = {
   onChangeTitle: (e: ChangeEvent<HTMLInputElement>) => void
   descriptionValue: string,
   onChangeDescription: (e: ChangeEvent<HTMLTextAreaElement>) => void,
-  descriptionError?: string
+  postError?: string
 }
 
-export default function ModalEditPost({ isOpen, onClick, onRequestClose, titleValue, onChangeTitle, descriptionValue, onChangeDescription, descriptionError }: ModalProps) {
+export default function ModalEditPost({ isOpen, onClick, onRequestClose, titleValue, onChangeTitle, descriptionValue, onChangeDescription, postError }: ModalProps) {
 
   return (
     <ModalComponent
@@ -54,17 +54,16 @@ export default function ModalEditPost({ isOpen, onClick, onRequestClose, titleVa
       }}
       contentLabel="Example Modal"
     >
-      <div>
-        <div className="warningPost">
-          <h1>Edit your post</h1>
-          <p>Got a mistake? Don't worry; I'm here.</p>
-          <Input placeholder="Title" value={titleValue} onChange={onChangeTitle} />
+      <div className="editModalContainer">
+        <h1>Edit your post</h1>
+        <p>Got a mistake? Don't worry; I'm here.</p>
+        <Input placeholder="Title" value={titleValue} onChange={onChangeTitle} />
 
-          <TextArea placeholder="Description" value={descriptionValue} onChange={onChangeDescription} errorMessage={descriptionError} />
-          <span style={{ color: descriptionValue.length == 240 ? "red" : "white" }}>{`${(240 - descriptionValue?.length)} characters left`}</span>
-          <button onClick={onClick}>Save</button>
-        </div>
+        <TextArea placeholder="Description" value={descriptionValue} onChange={onChangeDescription} errorMessage={postError} />
+        <span style={{ color: descriptionValue.length == 240 ? "red" : "white" }}>{`${(240 - descriptionValue?.length)} characters left`}</span>
+        <button onClick={onClick}>Save</button>
       </div>
+
     </ModalComponent >
   )
 }

@@ -4,6 +4,7 @@ import './modal.modules.scss'
 import api from '../../api';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
+import useLink from '../../hooks/useLink';
 
 type ModalProps = {
   isOpen: boolean,
@@ -11,12 +12,12 @@ type ModalProps = {
 }
 
 export default function Modal({ isOpen, setIsOpen }: ModalProps) {
-  const navigate = useNavigate()
+  const { goHome } = useLink()
   const [showModal, setShowModal] = useState(false)
 
   async function deleteAccount() {
     await api.delete('user/delete-me')
-    navigate("/")
+    goHome()
     Cookies.remove("token")
   }
 

@@ -4,6 +4,7 @@ import api from '../../../api';
 import Input from '../../../components/Input';
 import WarningDelete from '../../../components/Warning';
 import { PostsContext } from '../../../contexts/postsContext';
+import useLink from '../../../hooks/useLink';
 import './settings.modules.scss'
 export default function Settings() {
   const [first_name, setFirstName] = useState("");
@@ -14,7 +15,7 @@ export default function Settings() {
   const [samePassword, setSamePassword] = useState(false)
   const [isUsed, setIsUsed] = useState(false);
   const isDisabled: boolean = !first_name || !last_name || !email || !password || !confirmPassword
-  const navigate = useNavigate()
+  const { goToUser } = useLink()
 
   async function updateInfo() {
     if (password != confirmPassword) {
@@ -29,7 +30,7 @@ export default function Settings() {
         email,
         password
       })
-      navigate('/user')
+      goToUser()
     } catch (error: any) {
       alert(error.response.data.message)
       setIsUsed(true)
@@ -60,9 +61,9 @@ export default function Settings() {
           <h1>Email</h1>
           <Input placeholder="Type your email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
           <h1>Password</h1>
-          <Input placeholder="Type your password" value={password} onChange={(e: any) => setPassword(e.target.value)} />
-          <Input placeholder="Confirm your password" value={confirmPassword} onChange={(e: any) => setConfirmPassword(e.target.value)} />
-          {samePassword ? <p>Passwords must be the same</p> : <></>}
+          <Input type="password" placeholder="Type your password" value={password} onChange={(e: any) => setPassword(e.target.value)} />
+          <Input type="password" placeholder="Confirm your password" value={confirmPassword} onChange={(e: any) => setConfirmPassword(e.target.value)} />
+          {samePassword ? <p className="warningPassword">Passwords must be the same</p> : <></>}
           <button onClick={updateInfo} disabled={isDisabled} className={isDisabled ? "buttonDisabled" : "button"}>Update</button>
         </div>
       </div>

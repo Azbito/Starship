@@ -29,15 +29,8 @@
     font-size: 1.3rem
   }
 
-  p {
-    display: flex;
-  }
-
-  input {
-    border: none;
-    outline: none;
-    border-radius: .5rem;
-    padding: .2rem;
+  .warningPassword {
+    color: rgb(194, 59, 59);
   }
 
   button {

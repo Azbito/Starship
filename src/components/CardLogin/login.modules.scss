@@ -35,24 +35,13 @@ background-position: center center;
     color: cardColors.$titleColor;
     font-size: 1.5rem;
   }
-
-  input {
-    background-color: cardColors.$inputColor;
-    color: cardColors.$inputFontColor;
-    border: none;
-    outline: none;
-    padding: 0.3rem;
-    text-align: center;
-    border-radius: 0.2rem;
-  }
-
+  
   .button {
     border: none;
     outline: none;
     cursor: pointer;
     color: cardColors.$buttonTextColor;
     padding: .8rem;
-    font-family: "Poppins";
     background-color: cardColors.$buttonColor;
     border-radius: 1rem;
     transition: 0.2s;

@@ -1,85 +1,28 @@
+
+
 .allPostsContainer {
   margin-bottom: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 100%
+  width: 100%;
 }
 
-.postContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(40, 58, 58);
-  width: 80%;
+.empty {
+  margin-top: 2rem;
+  background-color: rgb(111, 0, 255);
+  padding: 1rem;
   border-radius: 1rem;
-  padding: 2rem;
-  margin-top: 2rem;
-  flex-direction: column;
-  gap: 1rem;
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.356);
-
-
-  .title {
-    position: relative;
-    left: -15rem
-  }
-  
-  input {
-    outline: none;
-    border: none;
-    padding: .5rem;
-    border-radius: 1rem;  
-  }
-
-  textarea {
-    resize: none;
-    outline: none;
-    border: none;
-    padding: 1rem;
-    width: 80%;
-    height: 5rem;
-    font-family: "Poppins";
-    border-radius: 1rem;
-  }
-
-  button {
-    outline: none;
-    border: none;
-    padding: .5rem 1rem .5rem 1rem;
-    border-radius: 1rem;
-    background: linear-gradient(-45deg, #52caee, #3ce789, #06b4f3, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-    color: white;
-    cursor: pointer;
-   
-  }
-
-  .span {
-    color: white
-  }
-
-  .surpassedSpan {
-    color: red;
-  }
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.377);
 }
-
-.postsTitle {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-
 
 .box {
   position: relative;
 
   margin-top: 2rem;
   max-width: 60rem;
-  width: 70%;
+  width: 100%;
   height: auto;
   padding: 0 0 2rem 0;
   word-break: break-all;
@@ -131,6 +74,8 @@
     }  
   }
 
+
+
   p {
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.356);
 
@@ -143,14 +88,18 @@
   }
 }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+.quantityPosts {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #6a3ce7;
+  padding: .5rem;
+  width: auto;
+  height: auto;
+  word-break: break-all;
+  border-radius: 1rem;
+  
+  .icon {
+    font-size: 2.5rem;
+  }
 }

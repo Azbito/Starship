@@ -1,17 +1,9 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import useLink from '../../hooks/useLink'
 import './home.modules.scss'
 
 export default function Home() {
-  const navigate = useNavigate()
-
-  const goSignIn = () => {
-    navigate("/sign-in")
-  }
-
-  const goSignUp = () => {
-    navigate("/sign-up")
-  }
+  const { goSignIn, goSignUp } = useLink()
 
   return (
     <div className="containerHome">

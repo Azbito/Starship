@@ -44,7 +44,7 @@
     cursor: pointer;
     color: rgb(97, 55, 252);
     margin-left: .5rem;
-    cursor: default;
+    cursor: pointer;
 
     &:hover {
       color: rgb(156, 129, 255);
@@ -78,7 +78,8 @@
       margin-top: .2rem;
       color: rgb(216, 216, 216);
       transition: .2s;
-      
+      cursor: pointer;
+
       &:hover {
         color: white;
       }
