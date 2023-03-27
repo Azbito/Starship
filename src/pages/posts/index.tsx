@@ -3,7 +3,7 @@ import PostArea from '../../components/PostArea';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import EditIcon from '@mui/icons-material/Edit';
 import { communityPosts } from '../../utils/posts';
-import './posts.modules.scss'
+import './styles.scss'
 import { PostsContext } from '../../contexts/postsContext';
 import useLoader from '../../hooks/useLoader';
 import api from '../../api';
