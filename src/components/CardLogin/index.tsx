@@ -1,19 +1,19 @@
 import Cookies from 'js-cookie'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import api from '../../api'
 import useLink from '../../hooks/useLink'
+import useLoader from '../../hooks/useLoader';
 import Input from '../Input'
-import Loader from '../Loader'
-import './login.modules.scss'
+import './login.module.scss'
 
 export default function CardLogin() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
+  const { closeLoader, openLoader } = useLoader()
   const { goSignUp } = useLink()
 
   async function login(e: any) {
-    setIsLoading(true)
+    openLoader()
     try {
       const { data } = await api.post('auth/login', {
         email,
@@ -21,10 +21,10 @@ export default function CardLogin() {
       })
       Cookies.set("token", data.access_token, { expires: 7 })
       window.location.href = "/user"
-      setIsLoading(false)
+      closeLoader()
     } catch (error) {
       alert("Not found")
-      setIsLoading(false)
+      closeLoader()
     }
   }
 
@@ -39,7 +39,6 @@ export default function CardLogin() {
           <button className="button" type={'button'} onClick={login}>Login</button>
           <p>Do you not have an account yet?</p>
           <strong onClick={goSignUp}>Sign up</strong>
-          {isLoading && <Loader />}
         </div>
       </div>
     </div>

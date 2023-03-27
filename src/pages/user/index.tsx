@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import api from '../../api'
 import Modal from '../../components/Modal'
-import './user.modules.scss'
+import './user.module.scss'
 import SettingsIcon from '@mui/icons-material/Settings';
 import { PostsContext } from '../../contexts/postsContext'
 import HistoryEduIcon from '@mui/icons-material/HistoryEdu';

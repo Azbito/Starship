@@ -2,6 +2,7 @@ import Cookies from 'js-cookie'
 import React, { useState } from 'react'
 import api from '../../api'
 import useLink from '../../hooks/useLink'
+import useLoader from '../../hooks/useLoader'
 import Input from '../Input'
 import Loader from '../Loader'
 import './cardregister.modules.scss'
@@ -14,7 +15,7 @@ export default function CardRegister() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [areDifferents, setAreDifferents] = useState(false);
   const [isUsed, setIsUsed] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const { closeLoader, openLoader } = useLoader()
   const { goSignIn } = useLink()
 
   async function register() {
@@ -23,8 +24,7 @@ export default function CardRegister() {
       setAreDifferents(true)
       return;
     }
-
-    setIsLoading(true)
+    openLoader()
     try {
       await api.post('user/create', {
         first_name,
@@ -32,14 +32,13 @@ export default function CardRegister() {
         email,
         password
       })
-      setIsLoading(false)
       goSignIn()
     }
     catch (error: any) {
       alert(error.response.data.message)
       setIsUsed(true)
     } finally {
-      setIsLoading(false)
+      closeLoader()
     }
 
   }
@@ -59,8 +58,6 @@ export default function CardRegister() {
           <Input type="password" placeholder="Confirm your password" value={confirmPassword} onChange={(e: any) => setConfirmPassword(e.target.value)} />
           {areDifferents ? <p className="errorPassword">Passwords must be the same</p> : <></>}
           <button className="button" onClick={register}>Register</button>
-          {isLoading && <Loader />}
-
           <p>Do you have an account?</p>
           <strong onClick={goSignIn}>Sign in</strong>
         </div>
