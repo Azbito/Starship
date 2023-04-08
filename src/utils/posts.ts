@@ -66,7 +66,7 @@ export const communityPosts = [
     id: 9,
     avatar: 'astronaut_monkey',
     name: 'Thon',
-    title: "I'm looking foward for",
+    title: "I'm looking forward for",
     description:
       'Studying cience, sign language, biology, coding, design, music, everything! Where should I start?'
   },
